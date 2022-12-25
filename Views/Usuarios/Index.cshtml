@@ -1,0 +1,115 @@
+﻿@model IEnumerable<RapiditoWEBAPP.Models.Usuarios>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+    <div class="container">
+        <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RapiditoWEBAPP</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Zonass" asp-action="Index">Zonas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="TipoPersonas" asp-action="Index">TipoPersonas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Personas" asp-action="Index">Personas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="MotoristaZonas" asp-action="Index">MotoristasZonas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="CuotaPesoes" asp-action="Index">CuotasEnvio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="EnvioPedidoes" asp-action="Index">Peiddo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<h1>Registro de Usuarios</h1>
+<hr />
+<div class="row">
+    <div class="col-sm-9">
+    </div>
+    <div class="col-sm-3">
+        <a href="@Url.Action("Create", "Usuarios")" class="btn btn-success fa fa-plus">
+            Agregar Usuarios
+        </a>
+    </div>
+</div>
+<br />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Username)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.idPersonaU)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Username)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.idPersonaU)
+                </td>
+                <td>
+                    @if (item.Estado == 1)
+                    {
+                        <text>
+
+                            Activo
+                        </text>
+                    }
+                    else
+                    {
+                        <text>
+
+                            Inactivo
+                        </text>
+
+                    }
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaRegistro)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

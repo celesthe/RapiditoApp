@@ -1,0 +1,219 @@
+﻿@model RapiditoWEBAPP.Models.EnvioPedido
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="row">
+
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <div class="container">
+            <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">RapiditoWEBAPP</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <ul class="navbar-nav flex-grow-1">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Zonass" asp-action="Index">Zonas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="TipoPersonas" asp-action="Index">TipoPersonas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Personas" asp-action="Index">Personas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="MotoristaZonas" asp-action="Index">MotoristasZonas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="CuotaPesoes" asp-action="Index">CuotasEnvio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="EnvioPedidoes" asp-action="Index">Peiddo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<h1>Registro Nuevos Pedidos</h1>
+<hr />
+
+
+    <div class="row">
+        <div class="col-md-7 form-group">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Datos del pedido</div>
+                <div class="panel-body">
+
+                    <form asp-action="Create">
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="DireccionOrigen" class="control-label"></label>
+                                    <input asp-for="DireccionOrigen" class="form-control" />
+                                    <span asp-validation-for="DireccionOrigen" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="UbicacionGeograficaOrigen" class="control-label"></label>
+                                    <input asp-for="UbicacionGeograficaOrigen" class="form-control" />
+                                    <span asp-validation-for="UbicacionGeograficaOrigen" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="IdCliente" class="control-label"></label>
+                                    <input asp-for="IdCliente" class="form-control" />
+                                    <span asp-validation-for="IdCliente" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="productoAentregar" class="control-label"></label>
+                                    <input asp-for="productoAentregar" class="form-control" />
+                                    <span asp-validation-for="productoAentregar" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="idCuotaPesoE" class="control-label"></label>
+                                    <input asp-for="idCuotaPesoE" class="form-control" />
+                                    <span asp-validation-for="idCuotaPesoE" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="DireccionDestino" class="control-label"></label>
+                                    <input asp-for="DireccionDestino" class="form-control" />
+                                    <span asp-validation-for="DireccionDestino" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="UbicacionGeograficaDestino" class="control-label"></label>
+                                    <input asp-for="UbicacionGeograficaDestino" class="form-control" />
+                                    <span asp-validation-for="UbicacionGeograficaDestino" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="NombreClienteRecibe" class="control-label"></label>
+                                    <input asp-for="NombreClienteRecibe" class="form-control" />
+                                    <span asp-validation-for="NombreClienteRecibe" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label asp-for="doctoIdentificacion" class="control-label"></label>
+                                    <input asp-for="doctoIdentificacion" class="form-control" />
+                                    <span asp-validation-for="doctoIdentificacion" class="text-danger"></span>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <div class="form-group">
+                                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                                </div>
+                                <div>
+                                    <a asp-action="Index">Volver</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Metodos de pago</div>
+                        <div class="panel-body">
+
+                            <div class="col-sm-12">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                                    <label class="form-check-label" for="gridRadios1">
+                                        Deposito
+                                    </label>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+   
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">Datos de la tarjeta</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="numtarjeta" class="form-label">Numero de la tarjeta</label>
+                                    <input type="text" class="form-control" id="numtarjeta">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <label for="fechaven" class="form-label">Fecha Ven.</label>
+                                    <input type="text" class="form-control" id="fechaven">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="codigoS" class="form-label">Cod. Seguridad</label>
+                                    <input type="text" class="form-control" id="codigoS">
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="MontoT" class="form-label">Monto</label>
+                                    <input type="text" class="form-control" id="MontoT">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label for="nombreR" class="form-label">Nombre en la tarjeta</label>
+                                    <input type="text" class="form-control" id="nombreR">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

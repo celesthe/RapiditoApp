@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+
+
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-2">
+            <h3>Login</h3>
+        </div>
+        <div class="col-md-5"></div>
+    </div>
+
+    @ViewBag.error
+@*<div class="row">*@
+<form method="post" asp-controller="Usuarios" asp-action="Login">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="username">Usuario</label>
+        <input type="text" id="username" name="username" class="form-control" />
+
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <label class="form-label" for="password">Constraseña</label>
+        <input type="password" id="password" name="password" class="form-control" />
+
+    </div>
+
+    <!-- 2 column grid layout for inline styling -->
+    <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+            <!-- Checkbox -->
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                <label class="form-check-label" for="form2Example31"> Remember me </label>
+            </div>
+        </div>
+
+        <div class="col">
+            <!-- Simple link -->
+            <a href="#!">Olvido su contraseña?</a>
+        </div>
+    </div>
+    
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Iniciar sesion</button>
+
+
+</form>
+
+</body>
+</html>
+
